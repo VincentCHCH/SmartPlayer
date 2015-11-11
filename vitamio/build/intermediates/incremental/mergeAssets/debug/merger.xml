@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Vincent/SmartPlayer/vitamio/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Users/Vincent/SmartPlayer/vitamio/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/Vincent/SmartPlayerData/SmartPlayer/vitamio/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Users/Vincent/SmartPlayerData/SmartPlayer/vitamio/src/debug/assets"/></dataSet></merger>

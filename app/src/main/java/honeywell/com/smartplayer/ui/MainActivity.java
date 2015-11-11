@@ -45,7 +45,6 @@ import honeywell.com.smartplayer.ui.base.BaseFragment;
 import honeywell.com.smartplayer.ui.base.BaseSlidingFragmentActivity;
 import honeywell.com.smartplayer.ui.base.MessageTransfer;
 import honeywell.com.smartplayer.view.VideoPlayerFragment;
-import honeywell.com.smartplayer.widget.CustomButton;
 import io.vov.vitamio.LibsChecker;
 
 
@@ -59,8 +58,6 @@ public class MainActivity extends BaseSlidingFragmentActivity implements Message
      */
     private int mTag = 0;
 
-    private CustomButton cbFeedback;
-    private CustomButton cbAbove;
     private View title;
     private LinearLayout mlinear_listview;
 
@@ -205,6 +202,7 @@ public class MainActivity extends BaseSlidingFragmentActivity implements Message
                 return view;
             }
         };
+        Log.i(TAG,"livTitile: "+lvTitle);
         lvTitle.setAdapter(lvAdapter);
         lvTitle.setOnItemClickListener(new OnItemClickListener() {
             @Override

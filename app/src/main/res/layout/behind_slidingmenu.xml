@@ -35,7 +35,7 @@
         android:baselineAligned="false"
         android:orientation="horizontal" >
 
-        <honeywell.com.smartplayer.widget.CustomButton
+        <Button
             android:id="@+id/cbSettings"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -45,29 +45,16 @@
             Text="@string/button_setting"
             TextID="@+id/textview_setting_button"
             android:background="@drawable/back_button_default_style"
-            android:clickable="true" 
+            android:clickable="true"
             android:visibility="gone">
-        </honeywell.com.smartplayer.widget.CustomButton>
+        </Button>
 
         <include layout="@layout/merge_verticalside" />
         
-        <honeywell.com.smartplayer.widget.CustomButton
-            android:id="@+id/cbFeedback"
-            android:layout_width="0dp"
-            android:visibility="gone"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            Image="@drawable/button_feedback"
-            ImageID="@+id/imageview_feedback_button"
-            Text="@string/button_feedback"
-            TextID="@+id/textview_feedback_button"
-            android:background="@drawable/back_button_default_style"
-            android:clickable="true" >
-        </honeywell.com.smartplayer.widget.CustomButton>
 
         <include layout="@layout/merge_verticalside" />
         
-        <honeywell.com.smartplayer.widget.CustomButton
+        <Button
             android:id="@+id/cbAbove"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -78,7 +65,7 @@
             TextID="@+id/textview_about_button"
             android:background="@drawable/back_button_default_style"
             android:clickable="true" >
-        </honeywell.com.smartplayer.widget.CustomButton>
+        </Button>
     </LinearLayout>
 
 </FrameLayout>
