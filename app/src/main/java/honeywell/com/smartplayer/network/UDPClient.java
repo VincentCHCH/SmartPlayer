@@ -1,6 +1,5 @@
 package honeywell.com.smartplayer.network;
 
-import com.honeywell.firemanlocate.util.ByteUtil;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -10,6 +9,8 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+
+import honeywell.com.smartplayer.utils.ByteUtil;
 
 /**
  * Created by lynn.liu on 7/6/15.
