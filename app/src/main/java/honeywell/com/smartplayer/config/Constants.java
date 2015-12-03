@@ -1,7 +1,9 @@
 package honeywell.com.smartplayer.config;
 
 public class Constants {
-
+	public static final String URL = "192.168.0.111";
+	public static final int PORT_CTR = 12345;
+	public static final int PORT_REG = 12346;
 	public static final class TAGS {
 		public static final String NEWS_TAG = "news";
 		public static final String BLOG_TAG = "blog";

@@ -4,21 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.honeywell.firemanlocate.activity.ShowActivity;
-
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 import java.net.SocketException;
 
 /**
- * Created by lynn.liu on 7/6/15.
+ * Created by Vincent on 7/6/15.
  */
 public class UDPServer implements Runnable {
 
     public static final String UDP_MSG_RECEIVED = "udp_msg_received";
 
-    private static final int PORT = 12300;
+    private static final int PORT = 12345;
     private byte[] mMessage = new byte[1024];
     private boolean mLife = true;
     private Context mContext;
@@ -63,12 +61,11 @@ public class UDPServer implements Runnable {
                     }catch (Exception ex){
                         Log.i("CalculateService","ex:"+ex);
                     }
-                    Log.i("CalculateService", "UDPServer run5555");
                     Log.i("CalculateService", "dPacket.getData(): " + dPacket.getData());
                     if (dPacket.getData() != null && dPacket.getData().length > 0) {
                         Intent intent = new Intent();
                         intent.putExtra(UDP_MSG_RECEIVED, dPacket.getData());
-                        intent.setAction(ShowActivity.MSG_RECEIVED_ACTION);
+                        intent.setAction("fs");
                         mContext.getApplicationContext().sendBroadcast(intent);
                     }
 //                } catch (IOException e) {

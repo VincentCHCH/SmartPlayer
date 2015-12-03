@@ -13,7 +13,7 @@ import java.nio.ByteOrder;
 import honeywell.com.smartplayer.utils.ByteUtil;
 
 /**
- * Created by lynn.liu on 7/6/15.
+ * Created by Vincent .
  */
 public class UDPClient {
     private static final int SERVER_PORT = 12300;
