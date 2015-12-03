@@ -454,7 +454,9 @@ public class MainActivity extends BaseSlidingFragmentActivity implements Message
 //            }
 //        });
 //    }
-
+    public void doClick(View v) {
+        mVideoPlayerFragment.doClick(v);
+    }
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

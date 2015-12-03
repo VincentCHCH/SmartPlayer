@@ -15,6 +15,35 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" >
         </SurfaceView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/control_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Left Click"
+                android:onClick="doClick"/>
+            <Button
+                android:id="@+id/control_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Right Click"
+                android:onClick="doClick"/>
+            <Button
+                android:id="@+id/control_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Click"
+                android:onClick="doClick"/>
+            <Button
+                android:id="@+id/control_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Down Click"
+                android:onClick="doClick"/>
+        </LinearLayout>
     </io.vov.vitamio.widget.CenterLayout>
 
 </LinearLayout>

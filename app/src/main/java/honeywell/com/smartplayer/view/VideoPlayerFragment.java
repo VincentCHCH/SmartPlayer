@@ -9,7 +9,15 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import honeywell.com.smartplayer.R;
+import honeywell.com.smartplayer.entity.ControlModel;
+import honeywell.com.smartplayer.network.TCPServer;
 import honeywell.com.smartplayer.ui.base.BaseFragment;
 import honeywell.com.smartplayer.ui.base.MessageTransfer;
 import io.vov.vitamio.MediaPlayer;
@@ -36,24 +44,9 @@ public class VideoPlayerFragment extends BaseFragment implements MediaPlayer.OnB
     private boolean mIsVideoSizeKnown = false;
     private boolean mIsVideoReadyToBePlayed = false;
     private View view;
+    private Button mControlLeftBtn;
+    private ExecutorService exec ;
 
-    /**
-     *
-     * Called when the activity is first created.
-     */
-//    @Override
-//    public void onCreate(Bundle icicle) {
-//        super.onCreate(icicle);
-//        if (!LibsChecker.checkVitamioLibs(this))
-//            return;
-//        setContentView(R.layout.mediaplayer_2);
-//        mPreview = (SurfaceView) findViewById(R.id.surface);
-//        holder = mPreview.getHolder();
-//        holder.addCallback(this);
-//        holder.setFormat(PixelFormat.RGBA_8888);
-//        extras = getIntent().getExtras();
-//
-//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,9 +58,32 @@ public class VideoPlayerFragment extends BaseFragment implements MediaPlayer.OnB
         holder.addCallback(this);
         holder.setFormat(PixelFormat.RGBA_8888);
         extras = mActivity.getIntent().getExtras();
+        mControlLeftBtn = (Button)view.findViewById(R.id.control_left);
+        exec = Executors.newCachedThreadPool();
+
         return view;
     }
+    public void doClick(View v) {
+        TCPServer server = null;
+        switch (v.getId()) {
+            case R.id.control_top:
+               server = new TCPServer(mActivity,new ControlModel("T10"));
+                break;
+            case R.id.control_down:
+                server = new TCPServer(mActivity,new ControlModel("t10"));
 
+                break;
+            case R.id.control_left:
+                server = new TCPServer(mActivity,new ControlModel("p10"));
+
+                break;
+            case R.id.control_right:
+                server = new TCPServer(mActivity,new ControlModel("P10"));
+
+                break;
+        }
+        exec.execute(server);
+    }
     private void playVideo(Integer Media) {
         doCleanUp();
         try {
